@@ -1,5 +1,5 @@
 import Transaction from "../models/transaction.js";
-import Budget from "../models/Budget.js";
+import Budget from "../models/budget.js";
 
 
 // ==========================================
