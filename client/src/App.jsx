@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import PublicLayout from "./layouts/publiclayout";
-import DashboardLayout from "./layouts/DashboardLayout";
+import DashboardLayout from "./layouts/dashboardLayout";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -9,10 +9,10 @@ import Register from "./pages/Register";
 
 import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
-import Budgets from "./pages/Budgets";
-import Reports from "./pages/Reports";
+import Budgets from "./pages/budgets";
+import Reports from "./pages/reports";
 
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/protectedRoute";
 
 function App() {
     return (
