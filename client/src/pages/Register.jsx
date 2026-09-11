@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Lock, Mail, User, Wallet } from "lucide-react";
 
 import api from "../services/api";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/authcontext";
 
 function Register() {
     const { login } = useAuth();
