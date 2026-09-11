@@ -5,7 +5,7 @@ import {
     getBudgets,
     updateBudget,
     deleteBudget,
-} from "../controllers/budgetController.js";
+} from "../controllers/budgetcontroller.js";
 
 import authMiddleware from "../middleware/authMiddleware.js";
 
