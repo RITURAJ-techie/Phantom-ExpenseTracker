@@ -1,4 +1,4 @@
-import Transaction from "../models/Transaction.js";
+import Transaction from "../models/transaction.js";
 
 export const getReport = async (req, res) => {
     try {
@@ -23,17 +23,16 @@ export const getReport = async (req, res) => {
                     categoryTotals[transaction.category] = 0;
                 }
 
-                categoryTotals[transaction.category] +=
-                    transaction.amount;
+                categoryTotals[transaction.category] += transaction.amount;
             }
         });
 
-        const expenseByCategory = Object.entries(
-            categoryTotals
-        ).map(([category, amount]) => ({
-            category,
-            amount,
-        }));
+        const expenseByCategory = Object.entries(categoryTotals).map(
+            ([category, amount]) => ({
+                category,
+                amount,
+            })
+        );
 
         res.status(200).json({
             totalIncome,
@@ -42,7 +41,6 @@ export const getReport = async (req, res) => {
             expenseByCategory,
             transactions,
         });
-
     } catch (error) {
         res.status(500).json({
             message: "Failed to generate report",
