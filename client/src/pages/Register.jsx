@@ -4,6 +4,7 @@ import { Lock, Mail, User, Wallet } from "lucide-react";
 
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
+import { trackEvent } from "../analytics";
 
 function Register() {
     const { login } = useAuth();
@@ -85,6 +86,11 @@ function Register() {
 
             // Save token and update authentication state
             login(token);
+
+            // Track successful registration in Google Analytics
+            trackEvent("sign_up", {
+                method: "email",
+            });
 
             // Redirect to dashboard
             navigate("/dashboard", { replace: true });

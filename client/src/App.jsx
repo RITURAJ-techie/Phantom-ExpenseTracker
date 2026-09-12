@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import PublicLayout from "./layouts/PublicLayout";
 import DashboardLayout from "./layouts/dashboardLayout";
@@ -14,87 +15,105 @@ import Reports from "./pages/reports";
 
 import ProtectedRoute from "./components/protectedRoute";
 
+import { trackPageView } from "./analytics";
+
+
+function AnalyticsTracker() {
+    const location = useLocation();
+
+    useEffect(() => {
+        trackPageView(location.pathname);
+    }, [location.pathname]);
+
+    return null;
+}
+
+
 function App() {
     return (
-        <Routes>
+        <>
+            <AnalyticsTracker />
 
-            {/* PUBLIC */}
+            <Routes>
 
-            <Route
-                path="/"
-                element={
-                    <PublicLayout>
-                        <Home />
-                    </PublicLayout>
-                }
-            />
+                {/* PUBLIC */}
 
-            <Route
-                path="/login"
-                element={
-                    <PublicLayout>
-                        <Login />
-                    </PublicLayout>
-                }
-            />
+                <Route
+                    path="/"
+                    element={
+                        <PublicLayout>
+                            <Home />
+                        </PublicLayout>
+                    }
+                />
 
-            <Route
-                path="/register"
-                element={
-                    <PublicLayout>
-                        <Register />
-                    </PublicLayout>
-                }
-            />
+                <Route
+                    path="/login"
+                    element={
+                        <PublicLayout>
+                            <Login />
+                        </PublicLayout>
+                    }
+                />
+
+                <Route
+                    path="/register"
+                    element={
+                        <PublicLayout>
+                            <Register />
+                        </PublicLayout>
+                    }
+                />
 
 
-            {/* PROTECTED */}
+                {/* PROTECTED */}
 
-            <Route
-                path="/dashboard"
-                element={
-                    <ProtectedRoute>
-                        <DashboardLayout>
-                            <Dashboard />
-                        </DashboardLayout>
-                    </ProtectedRoute>
-                }
-            />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <DashboardLayout>
+                                <Dashboard />
+                            </DashboardLayout>
+                        </ProtectedRoute>
+                    }
+                />
 
-            <Route
-                path="/transactions"
-                element={
-                    <ProtectedRoute>
-                        <DashboardLayout>
-                            <Transactions />
-                        </DashboardLayout>
-                    </ProtectedRoute>
-                }
-            />
+                <Route
+                    path="/transactions"
+                    element={
+                        <ProtectedRoute>
+                            <DashboardLayout>
+                                <Transactions />
+                            </DashboardLayout>
+                        </ProtectedRoute>
+                    }
+                />
 
-            <Route
-                path="/budgets"
-                element={
-                    <ProtectedRoute>
-                        <DashboardLayout>
-                            <Budgets />
-                        </DashboardLayout>
-                    </ProtectedRoute>
-                }
-            />
+                <Route
+                    path="/budgets"
+                    element={
+                        <ProtectedRoute>
+                            <DashboardLayout>
+                                <Budgets />
+                            </DashboardLayout>
+                        </ProtectedRoute>
+                    }
+                />
 
-            <Route
-                path="/reports"
-                element={
-                    <ProtectedRoute>
-                        <DashboardLayout>
-                            <Reports />
-                        </DashboardLayout>
-                    </ProtectedRoute>
-                }
-            />
+                <Route
+                    path="/reports"
+                    element={
+                        <ProtectedRoute>
+                            <DashboardLayout>
+                                <Reports />
+                            </DashboardLayout>
+                        </ProtectedRoute>
+                    }
+                />
 
-        </Routes>
+            </Routes>
+        </>
     );
 }
 
