@@ -1,5 +1,5 @@
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import Navbar from "../components/navbar.jsx";
+import Footer from "../components/footer.jsx";
 
 function PublicLayout({ children }) {
     return (
