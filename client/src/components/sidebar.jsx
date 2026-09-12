@@ -9,7 +9,7 @@ import {
     ChevronRight,
 } from "lucide-react";
 
-import { useAuth } from "../context/authcontext";
+import { useAuth } from "../context/AuthContext";
 
 
 function Sidebar() {

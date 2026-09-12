@@ -11,7 +11,7 @@ import {
     LogOut,
 } from "lucide-react";
 
-import { useAuth } from "../context/authcontext";
+import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
     const { isAuthenticated, logout } = useAuth();
