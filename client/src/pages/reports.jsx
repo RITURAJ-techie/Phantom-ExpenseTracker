@@ -14,6 +14,7 @@ import {
 } from "recharts";
 
 import api from "../services/api";
+import { trackEvent } from "../analytics";
 
 function Reports() {
     const [report, setReport] = useState({
@@ -37,6 +38,11 @@ function Reports() {
             const response = await api.get("/reports");
 
             setReport(response.data);
+
+            // GA4: Track successful report view
+            trackEvent("view_report", {
+                report_type: "financial_summary",
+            });
         } catch (error) {
             console.error(
                 error.response?.data || error.message
@@ -88,6 +94,7 @@ function Reports() {
 
                     <div className="animate-pulse">
                         <div className="h-8 w-64 rounded bg-gray-200" />
+
                         <div className="mt-3 h-4 w-96 rounded bg-gray-200" />
 
                         <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -124,7 +131,6 @@ function Reports() {
                     </p>
                 </div>
 
-
                 {/* =========================
                     SUMMARY CARDS
                 ========================== */}
@@ -149,7 +155,6 @@ function Reports() {
 
                     </div>
 
-
                     {/* Expenses */}
 
                     <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -167,7 +172,6 @@ function Reports() {
                         </p>
 
                     </div>
-
 
                     {/* Balance */}
 
@@ -195,7 +199,6 @@ function Reports() {
 
                 </div>
 
-
                 {/* =========================
                     CHARTS
                 ========================== */}
@@ -221,6 +224,7 @@ function Reports() {
                             {report.expenseByCategory.length === 0 ? (
 
                                 <div className="flex h-full items-center justify-center">
+
                                     <div className="text-center">
 
                                         <p className="font-medium text-gray-700">
@@ -232,6 +236,7 @@ function Reports() {
                                         </p>
 
                                     </div>
+
                                 </div>
 
                             ) : (
@@ -276,7 +281,6 @@ function Reports() {
                         </div>
 
                     </div>
-
 
                     {/* Income vs Expenses */}
 
@@ -333,7 +337,6 @@ function Reports() {
 
                 </div>
 
-
                 {/* =========================
                     TRANSACTION HISTORY
                 ========================== */}
@@ -349,7 +352,6 @@ function Reports() {
                             Review your recent financial activity.
                         </p>
                     </div>
-
 
                     <div className="mt-6">
 
@@ -402,7 +404,6 @@ function Reports() {
                                                 )}
 
                                             </div>
-
 
                                             {/* Amount */}
 

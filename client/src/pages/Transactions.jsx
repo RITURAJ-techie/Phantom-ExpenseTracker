@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Search, X } from "lucide-react";
 
 import api from "../services/api";
+import { trackEvent } from "../analytics";
 
 import {
     expenseCategories,
@@ -122,17 +123,43 @@ function Transactions() {
 
             if (editingId) {
 
+                // UPDATE TRANSACTION
                 await api.put(
                     `/transactions/${editingId}`,
                     formData
                 );
 
+
+                // Track successful expense edit
+                if (formData.type === "expense") {
+
+                    trackEvent("edit_expense", {
+                        category: formData.category,
+                        value: Number(formData.amount),
+                        currency: "INR",
+                    });
+
+                }
+
             } else {
 
+                // ADD TRANSACTION
                 await api.post(
                     "/transactions",
                     formData
                 );
+
+
+                // Track successful expense creation
+                if (formData.type === "expense") {
+
+                    trackEvent("add_expense", {
+                        category: formData.category,
+                        value: Number(formData.amount),
+                        currency: "INR",
+                    });
+
+                }
 
             }
 
@@ -197,9 +224,28 @@ function Transactions() {
 
         try {
 
+            // Find transaction before deleting
+            const transaction = transactions.find(
+                (item) => item._id === id
+            );
+
+
             await api.delete(
                 `/transactions/${id}`
             );
+
+
+            // Track successful expense deletion
+            if (transaction?.type === "expense") {
+
+                trackEvent("delete_expense", {
+                    category: transaction.category,
+                    value: Number(transaction.amount),
+                    currency: "INR",
+                });
+
+            }
+
 
             fetchTransactions();
 
@@ -656,8 +702,8 @@ function Transactions() {
                                             <p className="mt-1 text-xs text-gray-400">
                                                 {transaction.date
                                                     ? new Date(
-                                                          transaction.date
-                                                      ).toLocaleDateString()
+                                                        transaction.date
+                                                    ).toLocaleDateString()
                                                     : ""}
                                             </p>
 

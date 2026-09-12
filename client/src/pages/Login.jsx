@@ -4,6 +4,7 @@ import { Lock, Mail, Wallet } from "lucide-react";
 
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
+import { trackEvent } from "../analytics";
 
 function Login() {
     const { login } = useAuth();
@@ -59,11 +60,18 @@ function Login() {
             const token = response.data.token;
 
             if (!token) {
-                throw new Error("Login succeeded but no authentication token was returned.");
+                throw new Error(
+                    "Login succeeded but no authentication token was returned."
+                );
             }
 
             // Store token and update authentication state
             login(token);
+
+            // Track successful login in GA4
+            trackEvent("login", {
+                method: "email",
+            });
 
             // Redirect to dashboard
             navigate("/dashboard", { replace: true });

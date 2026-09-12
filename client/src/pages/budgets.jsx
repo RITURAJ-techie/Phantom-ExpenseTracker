@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import { trackEvent } from "../analytics";
 import { expenseCategories } from "../utils/categories";
 
 function Budgets() {
@@ -78,12 +79,23 @@ function Budgets() {
             };
 
             if (editingId) {
+                // UPDATE BUDGET
                 await api.put(
                     `/budgets/${editingId}`,
                     data
                 );
             } else {
+                // CREATE BUDGET
                 await api.post("/budgets", data);
+
+                // GA4: Track successful budget creation
+                trackEvent("create_budget", {
+                    category: data.category,
+                    value: data.amount,
+                    currency: "INR",
+                    month: data.month,
+                    year: data.year,
+                });
             }
 
             resetForm();
@@ -171,7 +183,6 @@ function Budgets() {
                     </p>
                 </div>
 
-
                 {/* =========================
                     BUDGET FORM
                 ========================== */}
@@ -220,7 +231,6 @@ function Budgets() {
                             </select>
                         </div>
 
-
                         {/* Amount */}
 
                         <div>
@@ -240,7 +250,6 @@ function Budgets() {
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
                             />
                         </div>
-
 
                         {/* Month */}
 
@@ -269,7 +278,6 @@ function Budgets() {
                             </select>
                         </div>
 
-
                         {/* Year */}
 
                         <div>
@@ -288,7 +296,6 @@ function Budgets() {
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
                             />
                         </div>
-
 
                         {/* Buttons */}
 
@@ -317,7 +324,6 @@ function Budgets() {
 
                     </form>
                 </div>
-
 
                 {/* =========================
                     BUDGET LIST
@@ -397,12 +403,12 @@ function Budgets() {
 
                                         </div>
 
-
                                         {/* Progress Bar */}
 
                                         <div className="mt-5">
 
                                             <div className="mb-2 flex justify-between text-xs text-gray-500">
+
                                                 <span>
                                                     Spending Progress
                                                 </span>
@@ -413,6 +419,7 @@ function Budgets() {
                                                     )}
                                                     %
                                                 </span>
+
                                             </div>
 
                                             <div className="h-3 overflow-hidden rounded-full bg-gray-100">
@@ -438,7 +445,6 @@ function Budgets() {
                                             </div>
 
                                         </div>
-
 
                                         {/* Actions */}
 
