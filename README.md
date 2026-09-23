@@ -146,6 +146,7 @@ Phantom-ExpenseTracker/
 │
 ├── README.md
 └── .gitignore
+---
 
 ## 🔑 What This Demonstrates
 ✅ Full-stack development — Built both frontend and backend components
@@ -156,11 +157,11 @@ Phantom-ExpenseTracker/
 ✅ Cloud deployment — Frontend, backend, and database deployed using cloud platforms
 ✅ Analytics integration — GA4 custom event tracking
 ✅ Digital marketing — Google Ads campaign configuration and Search Console integration
-
-
+---
 ## 🌐 Live Demo
 https://phantom-expense-tracker.vercel.app/
 
+---
 ## 👤 Author
 
 RITURAJ
