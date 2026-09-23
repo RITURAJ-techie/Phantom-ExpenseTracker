@@ -147,7 +147,7 @@ Phantom-ExpenseTracker/
 ├── README.md
 └── .gitignore
 
-🔑 What This Demonstrates
+## 🔑 What This Demonstrates
 ✅ Full-stack development — Built both frontend and backend components
 ✅ RESTful API development — Designed APIs for authentication, transactions, budgets, and reports
 ✅ Database management — MongoDB schema design and CRUD operations using Mongoose
@@ -158,10 +158,10 @@ Phantom-ExpenseTracker/
 ✅ Digital marketing — Google Ads campaign configuration and Search Console integration
 
 
-🌐 Live Demo
+## 🌐 Live Demo
 https://phantom-expense-tracker.vercel.app/
 
-👤 Author
+## 👤 Author
 
 RITURAJ
 🌐 Live Application
