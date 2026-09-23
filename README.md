@@ -97,32 +97,6 @@ A Search campaign was configured for academic and digital marketing demonstratio
 
 ---
 
-## 🏗️ Architecture
-
-```text
-                    USER
-                      │
-                      ▼
-              ┌───────────────┐
-              │ React + Vite  │
-              │   Frontend    │
-              └───────┬───────┘
-                      │
-                    Axios
-                      │
-                      ▼
-              ┌───────────────┐
-              │ Node + Express│
-              │   REST API    │
-              └───────┬───────┘
-                      │
-                  Mongoose
-                      │
-                      ▼
-              ┌───────────────┐
-              │ MongoDB Atlas │
-              └───────────────┘
-
 ## Repository Structure
 
 Phantom-ExpenseTracker/
@@ -146,6 +120,8 @@ Phantom-ExpenseTracker/
 │
 ├── README.md
 └── .gitignore
+
+    ```markdown
 
 ---
 
