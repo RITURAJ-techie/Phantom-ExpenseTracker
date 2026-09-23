@@ -1,343 +1,168 @@
 # 💰 Phantom Expense Tracker
 
-A full-stack personal finance management web application that helps users track income and expenses, manage budgets, and understand their financial activity through an interactive dashboard and reports.
+A full-stack personal finance management web application built with React, Node.js, Express, and MongoDB.
 
-🌐 **Live Application:** https://phantom-expense-tracker.vercel.app/
-
-💻 **GitHub Repository:** https://github.com/RITURAJ-techie/Phantom-ExpenseTracker/tree/main
+> Built to demonstrate end-to-end development — from authentication and REST APIs to database management, deployment, analytics, and digital marketing integration.
 
 ---
 
-## 📖 Description
+## 📦 Project Overview
 
-### What is Phantom?
-
-**Phantom Expense Tracker** is a full-stack personal finance management application designed to make everyday financial tracking simple and organized.
-
-The application allows users to securely create an account, manage their income and expenses, create budgets, and analyze their financial activity through dashboards and reports.
-
-The project was built using **React.js, Node.js, Express.js, and MongoDB**, with JWT-based authentication and REST APIs connecting the frontend and backend.
-
-In addition to the core application, Phantom integrates **Google Analytics 4, Google Search Console, and Google Ads** to demonstrate how a modern web application can be developed, deployed, monitored, and promoted.
+| **Application** | **Domain** | **Key Highlights** |
+| ---------------- | ---------- | ------------------ |
+| **Phantom Expense Tracker** | Personal Finance | Expense Tracking, Budget Management, Reports, Analytics |
 
 ---
 
-## 🎯 Motivation
+## 💰 Phantom Expense Tracker — Personal Finance Management
 
-Managing daily expenses manually can make it difficult to understand spending patterns and stay within a planned budget.
+Phantom is a personal finance management application that helps users track income and expenses, manage budgets, and understand their financial activity through dashboards and reports.
 
-The motivation behind Phantom was to create a simple platform where users can keep their financial information organized in one place instead of relying on spreadsheets, notes, or multiple tools.
+### **Features**
 
-I also wanted to build a project that went beyond basic CRUD functionality and provided practical experience with the complete lifecycle of a real-world web application.
+- 🔐 User registration and JWT-based authentication
+- 💸 Add, edit, and delete transactions
+- 💰 Track income and expenses
+- 🏷️ Categorize transactions
+- 📊 Dashboard with financial summaries
+- 📈 Reports and data visualization
+- 🎯 Budget creation and tracking
+- 📱 Responsive user interface
 
----
+### **Tech Stack**
 
-## 💡 Problem It Solves
-
-Personal financial information can become difficult to manage when income, expenses, and budgets are tracked separately.
-
-Phantom provides a centralized solution that allows users to:
-
-- Record income and expenses
-- Categorize transactions
-- Edit and delete transactions
-- Create and monitor budgets
-- View financial summaries
-- Analyze spending through reports and charts
-
-This makes it easier for users to understand their financial activity and maintain better control over their spending.
+`React` `Vite` `JavaScript` `Tailwind CSS` `Node.js` `Express.js` `MongoDB` `Mongoose` `JWT` `Axios` `Recharts`
 
 ---
 
-## ✨ Features
+## 📊 Analytics & Digital Marketing
 
-### 🔐 Authentication
+The project also demonstrates how a web application can be connected with analytics and digital marketing tools.
 
-- User registration
-- User login
-- JWT-based authentication
-- Password hashing using bcrypt
-- Protected routes
-- Authentication middleware
+### **Google Analytics 4**
 
-### 💸 Expense & Income Management
+GA4 is integrated to track important user interactions.
 
-- Add transactions
-- Edit transactions
-- Delete transactions
-- Track income
-- Track expenses
-- Categorize transactions
+**Tracked Events**
 
-### 💰 Budget Management
+- `sign_up`
+- `login`
+- `add_expense`
+- `edit_expense`
+- `delete_expense`
+- `create_budget`
+- `view_report`
+- `download_report`
 
-- Create budgets
-- Track budget limits
-- Monitor spending
-- Manage budget information
+### **Google Search Console**
 
-### 📊 Dashboard
+- Website ownership verification
+- Sitemap submission
+- Search visibility monitoring
 
-- Total income
-- Total expenses
-- Current balance
-- Recent transactions
-- Budget overview
-- Financial summaries
+### **Google Ads**
 
-### 📈 Reports & Data Visualization
+A Search campaign was configured for academic and digital marketing demonstration.
 
-- Financial reports
-- Spending analysis
-- Interactive charts
-- Financial data visualization
-- Graphical representation of financial activity
+**Campaign Configuration**
 
-### 📱 Responsive Interface
-
-The application provides a responsive interface designed for desktop, tablet, and mobile devices.
+- Campaign Type: Search
+- Location: India
+- Language: English
+- Bidding: Maximize Clicks
+- Daily Budget: ₹20/day
+- Keywords: Expense Tracker, Budget Planner, Daily Expense Tracker, Financial Planning
+- Status: Not funded / Not activated
 
 ---
 
-## 🛠️ Tech Stack
+## 🧰 Technology Stack
 
-### Frontend
-
-- **React.js** — Building the user interface
-- **Vite** — Development and build tooling
-- **JavaScript** — Application logic
-- **Tailwind CSS** — Styling and responsive design
-- **React Router** — Client-side routing
-- **Axios** — API communication
-- **Recharts** — Data visualization
-- **Lucide React** — Icons
-
-### Backend
-
-- **Node.js** — Backend runtime
-- **Express.js** — REST API framework
-- **JWT** — Authentication
-- **bcryptjs** — Password hashing
-- **dotenv** — Environment configuration
-- **CORS** — Cross-origin communication
-
-### Database
-
-- **MongoDB** — Database
-- **Mongoose** — MongoDB object modeling
-- **MongoDB Atlas** — Cloud database hosting
-
-### Analytics & Digital Marketing
-
-- **Google Analytics 4**
-- **Google Search Console**
-- **Google Ads**
-
-### Deployment
-
-- **Vercel** — Frontend
-- **Render** — Backend
-- **MongoDB Atlas** — Database
-
-### Version Control
-
-- **Git**
-- **GitHub**
+| **Layer** | **Technology** |
+| --------- | -------------- |
+| **Frontend** | React, Vite, JavaScript, Tailwind CSS |
+| **Routing** | React Router |
+| **API Communication** | Axios |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB, Mongoose |
+| **Authentication** | JWT, bcryptjs |
+| **Charts** | Recharts |
+| **Analytics** | Google Analytics 4 |
+| **SEO / Search** | Google Search Console |
+| **Marketing** | Google Ads |
+| **Frontend Deployment** | Vercel |
+| **Backend Deployment** | Render |
+| **Database Hosting** | MongoDB Atlas |
+| **Version Control** | Git, GitHub |
 
 ---
 
 ## 🏗️ Architecture
 
 ```text
-                         USER
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  React + Vite   │
-                 │    Frontend     │
-                 └────────┬────────┘
-                          │
-                        Axios
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │ Node.js +       │
-                 │ Express.js      │
-                 │    Backend      │
-                 └────────┬────────┘
-                          │
-                       Mongoose
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  MongoDB Atlas  │
-                 └─────────────────┘
+                    USER
+                      │
+                      ▼
+              ┌───────────────┐
+              │ React + Vite  │
+              │   Frontend    │
+              └───────┬───────┘
+                      │
+                    Axios
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Node + Express│
+              │   REST API    │
+              └───────┬───────┘
+                      │
+                  Mongoose
+                      │
+                      ▼
+              ┌───────────────┐
+              │ MongoDB Atlas │
+              └───────────────┘
+
+## Repository Structure
+
+Phantom-ExpenseTracker/
+│
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── layouts/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── utils/
+│   └── public/
+│
+├── server/                 # Node.js / Express backend
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── config/
+│
+├── README.md
+└── .gitignore
+
+🔑 What This Demonstrates
+✅ Full-stack development — Built both frontend and backend components
+✅ RESTful API development — Designed APIs for authentication, transactions, budgets, and reports
+✅ Database management — MongoDB schema design and CRUD operations using Mongoose
+✅ Authentication & security — JWT authentication and password hashing
+✅ Data visualization — Financial data represented through interactive charts
+✅ Cloud deployment — Frontend, backend, and database deployed using cloud platforms
+✅ Analytics integration — GA4 custom event tracking
+✅ Digital marketing — Google Ads campaign configuration and Search Console integration
 
 
-              Analytics & Marketing
-                       │
-          ┌────────────┼────────────┐
-          ▼            ▼            ▼
-         GA4      Search Console  Google Ads
+🌐 Live Demo
+https://phantom-expense-tracker.vercel.app/
 
+👤 Author
 
----
-
-## 🔄 Application Flow
-
-```text
-User
- │
- ▼
-Register / Login
- │
- ▼
-JWT Authentication
- │
- ▼
-Dashboard
- │
- ├── Transactions
- │     ├── Add Expense
- │     ├── Edit Expense
- │     └── Delete Expense
- │
- ├── Budgets
- │
- └── Reports
-       │
-       ▼
-   Financial Analysis
-
-
-
----
-
-## 📊 Analytics & Tracking
-
-Phantom integrates **Google Analytics 4 (GA4)** to understand how users interact with the application.
-
-### GA4 Custom Events
-
-The following user actions are tracked:
-
-- `sign_up` — User registration
-- `login` — User login
-- `add_expense` — Adding an expense
-- `edit_expense` — Editing an expense
-- `delete_expense` — Deleting an expense
-- `create_budget` — Creating a budget
-- `view_report` — Viewing financial reports
-- `download_report` — Downloading reports
-
-These events help analyze user engagement and the usage of important application features.
-
----
-
-## 📢 Google Ads Campaign
-
-A **Google Ads Search Campaign** was configured as part of the digital marketing implementation.
-
-### Campaign Configuration
-
-| Setting | Value |
-|---|---|
-| Campaign Type | Search |
-| Campaign Name | ExpenseTracker Pro Search Campaign |
-| Target Location | India |
-| Language | English |
-| Daily Budget | ₹20/day |
-| Bidding Strategy | Maximize Clicks |
-| Network | Google Search Network |
-| Status | Not Funded / Not Activated |
-
-### Target Keywords
-
-- Expense Tracker
-- Budget Planner
-- Daily Expense Tracker
-- Financial Planning
-
-The campaign was configured for **academic and demonstration purposes**. It was not funded or activated for paid advertising.
-
----
-
-## 🔎 Google Search Console
-
-Google Search Console was integrated to demonstrate search visibility and website indexing.
-
-### Configuration
-
-- Website ownership verified using Google Analytics
-- Sitemap submitted successfully
-- Sitemap: `sitemap.xml`
-- Public pages included:
-  - Home
-  - Login
-  - Register
-
----
-
-## ☁️ Deployment
-
-The application uses separate services for frontend, backend, and database hosting.
-
-| Component | Platform |
-|---|---|
-| Frontend | Vercel |
-| Backend | Render |
-| Database | MongoDB Atlas |
-
-### Live Application
-
-🌐 https://phantom-expense-tracker.vercel.app/
-
----
-
-## ⚙️ Local Setup
-
-### Prerequisites
-
-- Node.js
-- npm
-- MongoDB / MongoDB Atlas
-- Git
-
-### Clone Repository
-
-```bash
-git clone https://github.com/RITURAJ-techie/Phantom-ExpenseTracker.git
-cd Phantom-ExpenseTracker
-
-cd Phantom-ExpenseTracker
-
-Then continue:
-
-### Install Frontend Dependencies
-
-```bash
-cd client
-npm install
-Install Backend Dependencies
-
-Open another terminal:
-
-cd server
-npm install
-Environment Variables
-
-Create a .env file inside the server folder:
-
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-
-Create a .env file inside the client folder:
-
-VITE_API_URL=http://localhost:5000/api
-Run Backend
-cd server
-npm run dev
-Run Frontend
-cd client
-npm run dev
+RITURAJ
+🌐 Live Application
+💻 GitHub Repository
