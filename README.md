@@ -146,6 +146,7 @@ Phantom-ExpenseTracker/
 │
 ├── README.md
 └── .gitignore
+
 ---
 
 ## 🔑 What This Demonstrates
@@ -157,13 +158,28 @@ Phantom-ExpenseTracker/
 ✅ Cloud deployment — Frontend, backend, and database deployed using cloud platforms
 ✅ Analytics integration — GA4 custom event tracking
 ✅ Digital marketing — Google Ads campaign configuration and Search Console integration
+
+
 ---
+
 ## 🌐 Live Demo
+
+🚀 **Live Application:**  
 https://phantom-expense-tracker.vercel.app/
 
+
 ---
+
 ## 👤 Author
 
-RITURAJ
-🌐 Live Application
-💻 GitHub Repository
+**RITURAJ**
+
+Computer Science / Software Development Student
+
+- 🌐 **Live Application:** https://phantom-expense-tracker.vercel.app/
+- 💻 **GitHub:** https://github.com/RITURAJ-techie
+- 📂 **Project Repository:** https://github.com/RITURAJ-techie/Phantom-ExpenseTracker
+
+---
+
+⭐ If you found this project useful, consider giving the repository a star.
