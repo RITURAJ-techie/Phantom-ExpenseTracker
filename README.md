@@ -97,31 +97,33 @@ A Search campaign was configured for academic and digital marketing demonstratio
 
 ---
 
-## Repository Structure
+---
 
+## 🗂️ Repository Structure
+
+```text
 Phantom-ExpenseTracker/
 │
 ├── client/                 # React frontend
 │   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── layouts/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── utils/
-│   └── public/
+│   │   ├── components/    # Reusable UI components
+│   │   ├── context/       # Authentication context
+│   │   ├── layouts/       # Application layouts
+│   │   ├── pages/         # Application pages
+│   │   ├── services/      # API services
+│   │   └── utils/         # Utility functions
+│   └── public/            # Static files and sitemap
 │
-├── server/                 # Node.js / Express backend
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   └── config/
+├── server/                # Node.js / Express backend
+│   ├── controllers/       # Request handling logic
+│   ├── middleware/        # Authentication and middleware
+│   ├── models/            # MongoDB/Mongoose models
+│   ├── routes/            # API routes
+│   └── config/            # Backend configuration
 │
 ├── README.md
 └── .gitignore
-
----
+```
 
 ## 🔑 What This Demonstrates
 ✅ Full-stack development — Built both frontend and backend components
