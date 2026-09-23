@@ -121,8 +121,6 @@ Phantom-ExpenseTracker/
 ├── README.md
 └── .gitignore
 
-    ```markdown
-
 ---
 
 ## 🔑 What This Demonstrates
